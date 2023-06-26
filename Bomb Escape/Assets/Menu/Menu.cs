@@ -18,7 +18,6 @@ public class MainPanel : MonoBehaviour
     [Header("Panels")]
     public GameObject mainPanel;
     public GameObject optionsPanel;
-    public GameObject levelSelectPanel;
 
 
     private void Awake()
@@ -27,13 +26,14 @@ public class MainPanel : MonoBehaviour
         volumeMaster.onValueChanged.AddListener(ChangeVolumeMaster);
     }
 
-    public void PlayLevel(string levelName)
+    public void PlayLevel()
     {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene("Nivel1");
     }
 
     public void ExitGame()
     {
+        Debug.Log("ExitGame() method called.");
         Application.Quit();
     }
     public void SetMute()
@@ -51,7 +51,6 @@ public class MainPanel : MonoBehaviour
     {
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
-       // levelSelectPanel.SetActive(false);
 
         panel.SetActive(true);
         PlaySoundButton();
