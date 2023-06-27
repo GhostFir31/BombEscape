@@ -67,7 +67,7 @@ public class Pause : MonoBehaviour
     {
 
         pauseMenu.SetActive(false);
-        resumeButton.onClick.AddListener(OnResumePressed);
+        //resumeButton.onClick.AddListener(OnResumePressed);
         menuButton.onClick.AddListener(OnMenuPressed);
 
     }
