@@ -14,6 +14,7 @@ public class PlayerControllerPersonaje : MonoBehaviour
     private float horizontal;
     private float vertical;
     
+  
 
 
     // Start is called before the first frame update

@@ -17,6 +17,7 @@ public class MainPanel : MonoBehaviour
     private float lastVolume;
     [Header("Panels")]
     public GameObject mainPanel;
+    public GameObject vsPanel;
     public GameObject optionsPanel;
 
 
@@ -30,7 +31,11 @@ public class MainPanel : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel1");
     }
+    public void VsLevel()
+    {
+        SceneManager.LoadScene("Nivel2");
 
+    }
     public void ExitGame()
     {
         Debug.Log("ExitGame() method called.");
@@ -51,6 +56,7 @@ public class MainPanel : MonoBehaviour
     {
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
+        vsPanel.SetActive(false);
 
         panel.SetActive(true);
         PlaySoundButton();
