@@ -1,56 +1,83 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
+    /*
+        [SerializeField] private GameObject menuPausa;
 
-    [SerializeField] private GameObject menuPausa;
+        private bool juegoPausado = false;
 
-    private bool juegoPausado=false;
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                print("Haz presionado escape");
+                if (juegoPausado)
+                {
+                    Reanudar();
+                }
+                else
+                {
+                    Pausa();
+                }
 
-            if(juegoPausado) {
-                Reanudar();
-            } else {
-                Pausa();
             }
 
         }
-    }
-    public void Pausa()
+        public void Pausa()
+        {
+            juegoPausado = true;
+            Time.timeScale = 0f;
+            menuPausa.SetActive(true);
+            print("Haz presionado pausa");
+        }
+
+        public void Reanudar()
+        {
+            juegoPausado = false;
+            Time.timeScale = 1f;
+            menuPausa.SetActive(false);
+            print("Haz presionado reanudar");
+        }
+
+        public void Reiniciar()
+        {
+            juegoPausado = false;
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            print("Haz presionado reiniciar");
+        }
+        public void Volver()
+        {
+            juegoPausado = false;
+            Debug.Log("Volviendo Menu");
+            SceneManager.LoadScene("SampleScene");
+            print("Haz presionado volver");
+        }*/
+
+    public GameObject pauseMenu;
+    public Button resumeButton;
+    public Button menuButton;
+
+
+    private void Awake()
     {
-        juegoPausado = true;
-        Time.timeScale = 0f;
-        menuPausa.SetActive(true);
+
+        pauseMenu.SetActive(false);
+        //resumeButton.onClick.AddListener(OnResumePressed);
+        menuButton.onClick.AddListener(OnMenuPressed);
 
     }
 
-    public void Reanudar()
+    void OnMenuPressed()
     {
-        juegoPausado = false;
-        Time.timeScale = 1f;
-        menuPausa.SetActive(false);
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MenuScene");
 
     }
 
-    public void Reiniciar()
-    {
-        juegoPausado = false;
-        Time.timeScale=1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-    }
-    public void Volver()
-    {
-        juegoPausado = false;
-        Debug.Log("Volviendo Menu");
-        SceneManager.LoadScene("SampleScene");
-
-    }
 }
