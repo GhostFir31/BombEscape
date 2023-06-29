@@ -43,7 +43,7 @@ public class PlayerControllerPersonaje : MonoBehaviour
         if(Input.GetKey(KeyCode.D)) //Mover personaje si se presiona la tecla D
         transform.Translate(Vector3.right*movementSpeed*Time.deltaTime);
 
-       if(Input.GetKeyDown(KeyCode.Mouse0)){ //GetKeyDown para que solo salga una bala al presionar el mouse
+       if(Input.GetKeyDown(KeyCode.Space)){ //GetKeyDown para que solo salga una bala al presionar el mouse
         Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
        }
         /*if(Input.GetKeyDown(KeyCode.Space)){

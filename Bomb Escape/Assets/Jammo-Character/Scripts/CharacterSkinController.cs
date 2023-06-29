@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSkinController : MonoBehaviour
+public class j1: MonoBehaviour
 {
     Animator animator;
     Renderer[] characterMaterials;
