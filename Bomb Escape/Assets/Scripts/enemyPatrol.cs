@@ -16,7 +16,7 @@ public class enemyPatrol : MonoBehaviour
     
     void Start()
     {
-        set
+        
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player");
     }
