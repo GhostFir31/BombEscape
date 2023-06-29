@@ -30466,7 +30466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4911057012121422}
   - component: {fileID: 95448628147039386}
-  - component: {fileID: 7728812250322425968}
   m_Layer: 0
   m_Name: Mon_00
   m_TagString: Untagged
@@ -30514,20 +30513,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7728812250322425968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818861082154570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1060fef9fe6a72d42ac6d715459ff20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 50
-  radius: 205
 --- !u!1 &1846604720013428
 GameObject:
   m_ObjectHideFlags: 0
