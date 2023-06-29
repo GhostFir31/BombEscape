@@ -17,7 +17,7 @@ public class EliminarObjeto : MonoBehaviour
          aux += Time.deltaTime;
 
         //Conocer la posicion actual
-        if(aux >= 3f){
+        if(aux >= 5f){
         Destroy(gameObject);
        aux = 0f;
        }
