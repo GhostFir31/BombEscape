@@ -1,9 +1,10 @@
-using UnityEngine.SceneManagement;
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Vida : MonoBehaviour
+public class multi : MonoBehaviour
 {
+
     
     public float maxLifeAmount = 100f; 
     public float lifeAmount; 
@@ -28,12 +29,7 @@ public class Vida : MonoBehaviour
 
     private void Die()
     {
-        if (gameObject.CompareTag("Player"))
-        {
-            SceneManager.LoadScene("perdiste");
-        }
-        
-        
+ 
         Destroy(gameObject); 
     } 
 }

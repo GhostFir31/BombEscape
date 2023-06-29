@@ -82,8 +82,11 @@ public class PlayerControllerPersonaje : MonoBehaviour
 
         if(score==3){
 
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("ganaste");
 
         }
     }
+
+
+
 }
