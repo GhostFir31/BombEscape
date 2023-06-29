@@ -56,7 +56,7 @@ public class MainPanel : MonoBehaviour
     {
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
-        vsPanel.SetActive(false);
+
 
         panel.SetActive(true);
         PlaySoundButton();

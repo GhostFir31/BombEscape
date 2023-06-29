@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerPersonaje : MonoBehaviour
 {
@@ -51,6 +52,12 @@ public class PlayerControllerPersonaje : MonoBehaviour
         Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
         
        }
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        { //GetKeyDown para que solo salga una bala al presionar el mouse
+            SceneManager.LoadScene("Menu");
+
+        }
         /*if(Input.GetKeyDown(KeyCode.Space)){
 
             if(checkInGround())
