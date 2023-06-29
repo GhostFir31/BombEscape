@@ -16,10 +16,38 @@ public class Dano : MonoBehaviour
 
     private void Explode()
     {
-        RaycastHit[] hits = new RaycastHit[10];
-        int numHits = Physics.RaycastNonAlloc(transform.position, transform.forward, hits, raycastDistance, targetLayer);
+        RaycastHit[] hits = new RaycastHit[4];
 
-        for (int i = 0; i < numHits; i++)
+        // Raycast hacia la derecha
+        if (Physics.RaycastNonAlloc(transform.position, transform.right, hits, raycastDistance, targetLayer) > 0)
+        {
+            ApplyDamageToHits(hits);
+        }
+
+        // Raycast hacia la izquierda
+        if (Physics.RaycastNonAlloc(transform.position, -transform.right, hits, raycastDistance, targetLayer) > 0)
+        {
+            ApplyDamageToHits(hits);
+        }
+
+        // Raycast hacia enfrente
+        if (Physics.RaycastNonAlloc(transform.position, transform.forward, hits, raycastDistance, targetLayer) > 0)
+        {
+            ApplyDamageToHits(hits);
+        }
+
+        // Raycast hacia atrás
+        if (Physics.RaycastNonAlloc(transform.position, -transform.forward, hits, raycastDistance, targetLayer) > 0)
+        {
+            ApplyDamageToHits(hits);
+        }
+
+        Destroy(gameObject);
+    }
+
+    private void ApplyDamageToHits(RaycastHit[] hits)
+    {
+        for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit hit = hits[i];
 
@@ -33,8 +61,6 @@ public class Dano : MonoBehaviour
                 }
             }
         }
-
-        Destroy(gameObject);
     }
 
     private bool HasObstacleBetween(Vector3 start, Vector3 end, LayerMask obstacleLayer)
