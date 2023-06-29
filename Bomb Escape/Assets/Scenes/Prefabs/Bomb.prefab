@@ -129,10 +129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 100
-  raycastDistance: 5
+  raycastDistance: 7
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &8776401505404379784
 GameObject:
   m_ObjectHideFlags: 0
