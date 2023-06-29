@@ -44,6 +44,7 @@ public class PlayerControllerPersonaje : MonoBehaviour
 
        if(Input.GetKeyDown(KeyCode.Mouse0)){ //GetKeyDown para que solo salga una bala al presionar el mouse
         Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+        
        }
         /*if(Input.GetKeyDown(KeyCode.Space)){
 
