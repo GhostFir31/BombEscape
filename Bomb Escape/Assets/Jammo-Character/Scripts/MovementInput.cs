@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class MovementInput : MonoBehaviour {
 
+
     public float Velocity;
     [Space]
 

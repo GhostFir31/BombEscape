@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
 public class PlayerControllerPersonaje : MonoBehaviour
 {
+    
     public float movementSpeed;
     public float maxSpeed = 10f;
     public GameObject bullet;
@@ -22,8 +24,8 @@ public class PlayerControllerPersonaje : MonoBehaviour
     public KeyCode keyLeft;
     public KeyCode keyRight;
     public KeyCode keyAction;
-
-
+    public int score = 0;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +33,16 @@ public class PlayerControllerPersonaje : MonoBehaviour
 
         rb = gameObject.GetComponent<Rigidbody>();
         lastFireTime = -Mathf.Infinity;
+     
     }
 
     // Update is called once per frame
     void Update()
     {
 
+
+
+        
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         if (Input.GetKey(keyUp)) //Mover personaje si se presiona la tecla W
@@ -65,7 +71,11 @@ public class PlayerControllerPersonaje : MonoBehaviour
         }
 
 
-
-
+    }
+    public void AddPoints(int points)
+    {
+        score += points;
+        Debug.Log("Puntos agregados: " + points);
+        Debug.Log("Puntuación total: " + score);
     }
 }
