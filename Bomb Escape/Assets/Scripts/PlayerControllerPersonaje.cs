@@ -13,8 +13,12 @@ public class PlayerControllerPersonaje : MonoBehaviour
     private Rigidbody rb;
     private float horizontal;
     private float vertical;
-    
-  
+
+    public KeyCode keyUp;
+    public KeyCode keyDown;
+    public KeyCode keyLeft; 
+    public KeyCode keyRight;
+    public KeyCode keyAction;
 
 
     // Start is called before the first frame update
@@ -31,19 +35,19 @@ public class PlayerControllerPersonaje : MonoBehaviour
        
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        if(Input.GetKey(KeyCode.W)) //Mover personaje si se presiona la tecla W
+        if(Input.GetKey(keyUp)) //Mover personaje si se presiona la tecla W
         transform.Translate(Vector3.forward*movementSpeed*Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.S)) //Mover personaje si se presiona la tecla A
+        if(Input.GetKey(keyDown)) //Mover personaje si se presiona la tecla A
         transform.Translate(Vector3.back*movementSpeed*Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.A)) //Mover personaje si se presiona la tecla S
+        if(Input.GetKey(keyLeft)) //Mover personaje si se presiona la tecla S
         transform.Translate(Vector3.left*movementSpeed*Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.D)) //Mover personaje si se presiona la tecla D
+        if(Input.GetKey(keyRight)) //Mover personaje si se presiona la tecla D
         transform.Translate(Vector3.right*movementSpeed*Time.deltaTime);
 
-       if(Input.GetKeyDown(KeyCode.Space)){ //GetKeyDown para que solo salga una bala al presionar el mouse
+       if(Input.GetKeyDown(keyAction)){ //GetKeyDown para que solo salga una bala al presionar el mouse
         Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
        }
         /*if(Input.GetKeyDown(KeyCode.Space)){

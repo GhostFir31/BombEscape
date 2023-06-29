@@ -29,7 +29,7 @@ public class MainPanel : MonoBehaviour
 
     public void PlayLevel()
     {
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene("Escenario1");
     }
     public void VsLevel()
     {
