@@ -5,8 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //Velocidad de la bala
-    public float bulletSpeed;
-    public float distance;
+    
+    
     public float damage;
     private Vector3 currentPos;
     private Vector3 initialPos;
@@ -31,14 +31,5 @@ public class Bullet : MonoBehaviour
             
 
         
-    }
-
-    private void OnTriggerEnter(Collider other) {
-    Life life = other.GetComponent<Life>();
-    if(life!=null)
-    {
-        life.lifeAmount -= damage;
-    }
-    Destroy(gameObject);
     }
 }
