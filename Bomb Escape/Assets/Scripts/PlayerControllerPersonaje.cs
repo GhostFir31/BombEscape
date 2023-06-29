@@ -25,6 +25,8 @@ public class PlayerControllerPersonaje : MonoBehaviour
     public KeyCode keyRight;
     public KeyCode keyAction;
     public int score = 0;
+    private Vida vida;
+
    
     // Start is called before the first frame update
     void Start()
@@ -70,12 +72,18 @@ public class PlayerControllerPersonaje : MonoBehaviour
 
         }
 
-
+        
     }
     public void AddPoints(int points)
     {
         score += points;
         Debug.Log("Puntos agregados: " + points);
         Debug.Log("Puntuación total: " + score);
+
+        if(score==3){
+
+            SceneManager.LoadScene("Menu");
+
+        }
     }
 }

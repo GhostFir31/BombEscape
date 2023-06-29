@@ -1,28 +1,39 @@
+using UnityEngine.SceneManagement;
+
 using UnityEngine;
 
 public class Vida : MonoBehaviour
 {
-    public float maxLifeAmount = 100f; // Vida máxima del objeto
-    public float lifeAmount; // Vida actual del objeto
+    
+    public float maxLifeAmount = 100f; 
+    public float lifeAmount; 
+    public int contador = 0;
 
     private void Start()
     {
-        lifeAmount = maxLifeAmount; // Establecer la vida inicial al valor máximo
+        lifeAmount = maxLifeAmount; 
     }
 
     public void TakeDamage(float damageAmount)
     {
-        lifeAmount -= damageAmount; // Restar la cantidad de daño a la vida actual
+        lifeAmount -= damageAmount; 
 
         if (lifeAmount <= 0f)
         {
-            Die(); // Si la vida llega a cero o menos, llamar a la función Die
+            Die(); 
         }
+
+        
     }
 
     private void Die()
     {
-        // Aquí puedes añadir cualquier lógica adicional cuando el objeto muere
-        Destroy(gameObject); // Por ejemplo, destruir el objeto cuando muere
-    }
+        if (gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        
+        
+        Destroy(gameObject); 
+    } 
 }

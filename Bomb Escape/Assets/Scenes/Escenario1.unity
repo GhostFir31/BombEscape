@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -779,6 +779,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2089576006}
+    - targetCorrespondingSourceObject: {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089576009}
   m_SourcePrefab: {fileID: 100100000, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
 --- !u!1001 &270037684
 PrefabInstance:
@@ -1509,8 +1512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5d921f3aa4179489318cfd008afd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeAmount: 200
-  lifeAmount: 200
+  maxLifeAmount: 1
+  lifeAmount: 1
+  contador: 0
 --- !u!114 &617698543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,19 +1793,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1363502668518667651, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: keyUp
-      value: 119
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1363502668518667651, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: keyDown
-      value: 115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1363502668518667651, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: keyLeft
-      value: 97
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1363502668518667651, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: keyRight
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1363502668518667651, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: maxSpeed
@@ -1827,13 +1831,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jammo_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3541754002163558908, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4981151331375452596, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: lifeAmount
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4981151331375452596, guid: bd6ee82c5e06b3f4f86113cbf8261ae1, type: 3}
       propertyPath: maxLifeAmount
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2502,6 +2510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLifeAmount: 100
   lifeAmount: 0
+  contador: 0
 --- !u!1001 &683842934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5370,6 +5379,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100068, guid: 4ee39bc25eeaa144891bd0eadcc1bc51, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829251074}
+    - targetCorrespondingSourceObject: {fileID: 100068, guid: 4ee39bc25eeaa144891bd0eadcc1bc51, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1829251077}
   m_SourcePrefab: {fileID: 100100000, guid: 4ee39bc25eeaa144891bd0eadcc1bc51, type: 3}
 --- !u!1 &1829251063 stripped
 GameObject:
@@ -5388,8 +5400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5d921f3aa4179489318cfd008afd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeAmount: 200
-  lifeAmount: 200
+  maxLifeAmount: 1
+  lifeAmount: 1
+  contador: 0
 --- !u!114 &1829251065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5499,6 +5512,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32c74158ad286c4886db20b7c431004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1829251077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829251063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838e629508e37a74499d7bcc664b424b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToGive: 1
+  playerController: {fileID: 525335392}
 --- !u!1001 &1838173367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6027,8 +6054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5d921f3aa4179489318cfd008afd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeAmount: 200
-  lifeAmount: 200
+  maxLifeAmount: 1
+  lifeAmount: 1
+  contador: 0
 --- !u!114 &2089575999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6138,6 +6166,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32c74158ad286c4886db20b7c431004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2089576009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089575995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838e629508e37a74499d7bcc664b424b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToGive: 1
+  playerController: {fileID: 525335392}
 --- !u!1001 &2126001002
 PrefabInstance:
   m_ObjectHideFlags: 0
